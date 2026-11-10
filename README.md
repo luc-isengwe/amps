@@ -111,7 +111,7 @@ No GPU is needed. The AgentDojo experiments also need [Ollama](https://ollama.co
 
 ```bash
 git clone https://github.com/luc-isengwe/amps.git
-cd REPLACE_WITH_MY_REPOSITORY
+cd amps
 
 conda create -n amps python=3.11 -y
 conda activate amps
