@@ -1,0 +1,79 @@
+# Multi-tenant customer-support assistant (heterogeneous sessions, amps).
+#
+# Fictional system used to illustrate principals. Two external customers
+# (untrusted principals: either may be an attacker) talk to the same
+# assistant in successive sessions. The assistant keeps persistent notes to
+# "remember the context" between conversations, and can e-mail a summary.
+#
+# The cross-tenant risk: a note written during Alice's session (her order,
+# her address) is still in memory when Bob's session starts. Bob's prompt is
+# untrusted ({U}); Alice's note is confidential for Bob ({S}, added when the
+# memory crosses from Alice's session to Bob's). If the assistant e-mails
+# after reading the notes, {U,S} reaches an external sink: a confidentiality
+# violation that no single-session analysis can see.
+
+version: 1
+system: support-multitenant
+description: Shared support assistant with persistent notes, two customers.
+
+data_classes:
+  - id: order_data
+    # 'internal', not 'confidential': order_lookup only returns the orders of
+    # the customer of the current session, who may see them. Confidentiality
+    # between customers is handled by the principals (tenant isolation): what
+    # one customer's session leaves in persistent memory becomes {S} for the
+    # next customer.
+    sensitivity: internal
+    description: Orders, addresses and payment status of the current customer.
+  - id: faq
+    sensitivity: public
+    description: Public help-centre articles.
+
+tools:
+  - id: faq_search
+    description: Search the public help centre.
+    output: {trust: trusted, data_classes: [faq]}
+  - id: order_lookup
+    description: Look up the orders of the current customer.
+    output: {trust: trusted, data_classes: [order_data]}
+  - id: send_email
+    description: E-mail a summary to an address.
+    input_destination: external
+
+memory:
+  - id: notes
+    persistence: persistent
+    description: Free-text notes kept between conversations.
+
+agents:
+  - id: assistant
+    role: Customer-support assistant.
+    tools: [faq_search, order_lookup, send_email]
+    memory: {read: [notes], write: [notes]}
+
+principals:
+  - id: alice
+    trust: untrusted
+    entry_agents: [assistant]
+    description: External customer (could be an attacker).
+  - id: bob
+    trust: untrusted
+    entry_agents: [assistant]
+    description: External customer (could be an attacker).
+
+tasks:
+  - id: answer_question
+    description: Answer a customer question from the help centre and e-mail it.
+    requires:
+      - {edge: "prompt:alice->assistant", under: [U]}
+      - {edge: "ret:faq_search->assistant"}
+      - {edge: "call:assistant->send_email", under: [U]}
+  - id: remember_context
+    description: Keep a note of the conversation for the next session.
+    requires:
+      - {edge: "prompt:alice->assistant", under: [U]}
+      - {edge: "mw:assistant->notes", under: [U]}
+
+controls:
+  sessions: 2
+  session_principals: [alice, bob]

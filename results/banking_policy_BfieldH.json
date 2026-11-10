@@ -1,0 +1,37 @@
+{
+  "system": "agentdojo-banking-fields-H",
+  "manifest_sha256": "bb200c6064a1d2f9cd27fd23ebfd93984b9b55cf45bbb575272dbacba399bc15",
+  "gates": {
+    "call:assistant->schedule_transaction": "H",
+    "call:assistant->send_money": "H",
+    "call:assistant->update_password": "H",
+    "call:assistant->update_scheduled_transaction": "H",
+    "call:assistant->update_user_info": "H"
+  },
+  "registry": {
+    "get_balance": "5818a3d843a26183529b999cd1eca8c8ca3382bedbd93472d789a0e43c7f5b57",
+    "get_iban": "d1a2734c2354220cc4d9c322694bb3730f25023e81b980e05287969f47775dd7",
+    "get_most_recent_transactions": "607e4598cae734f1bcf5a5c9136cc6c5fc226b9c9a2b8f38b9557d3d6b64ac28",
+    "get_scheduled_transactions": "85ecc7c61f8168dd0bdfce0bf8cae60e41a4f99569d65514627e7edef60f480b",
+    "get_user_info": "96c975878fb85e6fe9c40552e6d24076420ce94f4961334f2ea8d10e1df67963",
+    "read_file": "f12d9acd2e5c91c9fbecbf408a18996557ffeca9baddbaca7d3b6fdb400b1137",
+    "schedule_transaction": "a726b339f13304333affa36ccec3c1b2577590bfae7e1316adc9a227c10cdb68",
+    "send_money": "699b5d3a091b8a6b6e8b29886e09c185406f950e4a49afe1cc70146767657a45",
+    "update_password": "955fa627c823412131870857108b7e11a6847abd7daf43273fd0614b0ffed1a1",
+    "update_scheduled_transaction": "0e384129676135e58eeae4e378829546f53a9e5d9abc4bcf76b344b448962b7d",
+    "update_user_info": "9b3288ae3eef0e4a457612dc501c02b358676f7fa51f2b2d8659910fe1c3caff"
+  },
+  "meta": {
+    "method": "ilp",
+    "status": "secure",
+    "cost": 12.0,
+    "properties": [
+      "integrity",
+      "confidentiality"
+    ],
+    "sessions": 1,
+    "iterations": 2,
+    "constraints": 8,
+    "conflicts": []
+  }
+}

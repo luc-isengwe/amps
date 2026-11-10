@@ -1,0 +1,70 @@
+tools:
+- id: get_iban
+  output:
+    trust: trusted
+  observed_state_change: false
+  observed_calls: 1
+- id: get_balance
+  output:
+    trust: trusted
+  observed_state_change: false
+  observed_calls: 1
+- id: get_user_info
+  output:
+    trust: trusted
+  observed_state_change: false
+  observed_calls: 1
+- id: get_most_recent_transactions
+  output:
+    fields:
+    - id: amount
+      trust: trusted
+    - id: date
+      trust: trusted
+    - id: id
+      trust: trusted
+    - id: recipient
+      trust: trusted
+    - id: recurring
+      trust: trusted
+    - id: sender
+      trust: trusted
+    - id: subject
+      trust: untrusted
+  observed_state_change: false
+  observed_calls: 12
+- id: get_scheduled_transactions
+  output:
+    trust: trusted
+  observed_state_change: false
+  observed_calls: 3
+- id: read_file
+  output:
+    trust: untrusted
+  observed_state_change: false
+  observed_calls: 4
+- id: send_money
+  output:
+    trust: trusted
+  observed_state_change: true
+  observed_calls: 6
+- id: schedule_transaction
+  output:
+    trust: trusted
+  observed_state_change: true
+  observed_calls: 1
+- id: update_scheduled_transaction
+  output:
+    trust: trusted
+  observed_state_change: true
+  observed_calls: 4
+- id: update_password
+  output:
+    trust: trusted
+  observed_state_change: true
+  observed_calls: 1
+- id: update_user_info
+  output:
+    trust: trusted
+  observed_state_change: true
+  observed_calls: 2

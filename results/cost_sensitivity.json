@@ -1,0 +1,252 @@
+{
+  "seed": 1,
+  "runs": 1000,
+  "results": [
+    {
+      "manifest": "examples/banking.yaml",
+      "runs": 1000,
+      "secure": 1000,
+      "conflicts": 0,
+      "same_as_default": 1000,
+      "distinct_policies": 1,
+      "default_policy": [
+        [
+          "call:assistant->schedule_transaction",
+          "I"
+        ],
+        [
+          "call:assistant->send_money",
+          "I"
+        ],
+        [
+          "call:assistant->update_password",
+          "I"
+        ],
+        [
+          "call:assistant->update_scheduled_transaction",
+          "I"
+        ],
+        [
+          "call:assistant->update_user_info",
+          "I"
+        ]
+      ],
+      "policies": [
+        {
+          "count": 1000,
+          "gates": [
+            [
+              "call:assistant->schedule_transaction",
+              "I"
+            ],
+            [
+              "call:assistant->send_money",
+              "I"
+            ],
+            [
+              "call:assistant->update_password",
+              "I"
+            ],
+            [
+              "call:assistant->update_scheduled_transaction",
+              "I"
+            ],
+            [
+              "call:assistant->update_user_info",
+              "I"
+            ]
+          ]
+        }
+      ],
+      "seconds": 14.0
+    },
+    {
+      "manifest": "examples/demo_4agents.yaml",
+      "runs": 1000,
+      "secure": 1000,
+      "conflicts": 0,
+      "same_as_default": 429,
+      "distinct_policies": 6,
+      "default_policy": [
+        [
+          "call:retrieval->web_search",
+          "C"
+        ],
+        [
+          "mr:scratchpad->executor",
+          "I"
+        ],
+        [
+          "msg:supervisor->executor",
+          "I"
+        ]
+      ],
+      "policies": [
+        {
+          "count": 494,
+          "gates": [
+            [
+              "call:executor->send_email",
+              "I"
+            ],
+            [
+              "call:executor->update_ticket",
+              "I"
+            ],
+            [
+              "call:retrieval->web_search",
+              "C"
+            ]
+          ]
+        },
+        {
+          "count": 429,
+          "gates": [
+            [
+              "call:retrieval->web_search",
+              "C"
+            ],
+            [
+              "mr:scratchpad->executor",
+              "I"
+            ],
+            [
+              "msg:supervisor->executor",
+              "I"
+            ]
+          ]
+        },
+        {
+          "count": 66,
+          "gates": [
+            [
+              "call:retrieval->web_search",
+              "C"
+            ],
+            [
+              "msg:supervisor->executor",
+              "I"
+            ],
+            [
+              "mw:retrieval->scratchpad",
+              "I"
+            ],
+            [
+              "mw:supervisor->scratchpad",
+              "I"
+            ]
+          ]
+        },
+        {
+          "count": 6,
+          "gates": [
+            [
+              "call:executor->send_email",
+              "I"
+            ],
+            [
+              "call:executor->update_ticket",
+              "I"
+            ],
+            [
+              "call:retrieval->web_search",
+              "I"
+            ]
+          ]
+        },
+        {
+          "count": 4,
+          "gates": [
+            [
+              "call:retrieval->web_search",
+              "I"
+            ],
+            [
+              "mr:scratchpad->executor",
+              "I"
+            ],
+            [
+              "msg:supervisor->executor",
+              "I"
+            ]
+          ]
+        },
+        {
+          "count": 1,
+          "gates": [
+            [
+              "call:retrieval->web_search",
+              "I"
+            ],
+            [
+              "msg:supervisor->executor",
+              "I"
+            ],
+            [
+              "mw:retrieval->scratchpad",
+              "I"
+            ],
+            [
+              "mw:supervisor->scratchpad",
+              "I"
+            ]
+          ]
+        }
+      ],
+      "seconds": 27.8
+    },
+    {
+      "manifest": "examples/support_multitenant.yaml",
+      "runs": 1000,
+      "secure": 1000,
+      "conflicts": 0,
+      "same_as_default": 426,
+      "distinct_policies": 4,
+      "default_policy": [
+        [
+          "mr:notes->assistant",
+          "C"
+        ]
+      ],
+      "policies": [
+        {
+          "count": 452,
+          "gates": [
+            [
+              "call:assistant->send_email",
+              "C"
+            ]
+          ]
+        },
+        {
+          "count": 426,
+          "gates": [
+            [
+              "mr:notes->assistant",
+              "C"
+            ]
+          ]
+        },
+        {
+          "count": 117,
+          "gates": [
+            [
+              "persist:notes",
+              "I"
+            ]
+          ]
+        },
+        {
+          "count": 5,
+          "gates": [
+            [
+              "mr:notes->assistant",
+              "I"
+            ]
+          ]
+        }
+      ],
+      "seconds": 11.0
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "config": "B_session",
+    "status": "secure",
+    "secure": true,
+    "gates": {
+      "call:assistant->schedule_transaction": "I",
+      "call:assistant->send_money": "I",
+      "call:assistant->update_password": "I",
+      "call:assistant->update_scheduled_transaction": "I",
+      "call:assistant->update_user_info": "I"
+    },
+    "cost": 9.0,
+    "conflicts": [],
+    "tasks_completed": 4,
+    "tasks_with_confirmation": 0,
+    "confirmations_total": 0
+  },
+  {
+    "config": "B_session+H",
+    "status": "secure",
+    "secure": true,
+    "gates": {
+      "call:assistant->schedule_transaction": "H",
+      "call:assistant->send_money": "H",
+      "call:assistant->update_password": "H",
+      "call:assistant->update_scheduled_transaction": "H",
+      "call:assistant->update_user_info": "H"
+    },
+    "cost": 12.0,
+    "conflicts": [],
+    "tasks_completed": 16,
+    "tasks_with_confirmation": 12,
+    "confirmations_total": 12
+  },
+  {
+    "config": "B_field",
+    "status": "secure",
+    "secure": true,
+    "gates": {
+      "call:assistant->schedule_transaction": "I",
+      "call:assistant->send_money": "I",
+      "call:assistant->update_password": "I",
+      "call:assistant->update_scheduled_transaction": "I",
+      "call:assistant->update_user_info": "I"
+    },
+    "cost": 9.0,
+    "conflicts": [],
+    "tasks_completed": 8,
+    "tasks_with_confirmation": 0,
+    "confirmations_total": 0
+  },
+  {
+    "config": "B_field+H",
+    "status": "secure",
+    "secure": true,
+    "gates": {
+      "call:assistant->schedule_transaction": "H",
+      "call:assistant->send_money": "H",
+      "call:assistant->update_password": "H",
+      "call:assistant->update_scheduled_transaction": "H",
+      "call:assistant->update_user_info": "H"
+    },
+    "cost": 12.0,
+    "conflicts": [],
+    "tasks_completed": 16,
+    "tasks_with_confirmation": 8,
+    "confirmations_total": 8
+  }
+]

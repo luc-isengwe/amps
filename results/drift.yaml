@@ -1,0 +1,165 @@
+version: 1
+system: demo-4agents
+description: Customer-support assistant used as the main demonstrator of the thesis.
+data_classes:
+- id: public_web
+  sensitivity: public
+- id: kb_internal
+  sensitivity: internal
+- id: customer_pii
+  sensitivity: confidential
+  description: Names, addresses, contract numbers of customers.
+- id: email_content
+  sensitivity: confidential
+  description: Body of e-mails received by the support mailbox.
+tools:
+- id: web_search
+  description: Search the public web and return the top results.
+  parameters:
+    query: string
+  output:
+    trust: untrusted
+    data_classes:
+    - public_web
+  input_destination: external
+- id: read_inbox
+  description: Return the latest e-mails of the support mailbox.
+  parameters:
+    limit: integer
+  output:
+    trust: untrusted
+    data_classes:
+    - email_content
+  input_destination: internal
+- id: kb_search
+  description: Search the internal knowledge base.
+  parameters:
+    query: string
+  output:
+    trust: trusted
+    data_classes:
+    - kb_internal
+- id: crm_lookup
+  description: Return the customer record for a customer id.
+  parameters:
+    customer_id: string
+  output:
+    trust: trusted
+    data_classes:
+    - customer_pii
+  input_destination: internal
+- id: send_email
+  description: Send an e-mail to an external address.
+  parameters:
+    to: string
+    subject: string
+    body: string
+  input_destination: external
+  integrity_critical: true
+- id: update_ticket
+  description: Change the status or content of a support ticket.
+  parameters:
+    ticket_id: string
+    status: string
+    note: string
+  input_destination: internal
+  integrity_critical: true
+memory:
+- id: shared_notes
+  persistence: persistent
+  description: Long-term notes shared by the agents.
+- id: scratchpad
+  persistence: session
+  description: Per-session plan and intermediate results.
+agents:
+- id: supervisor
+  role: Plans the work, delegates and aggregates results.
+  memory:
+    read:
+    - shared_notes
+    - scratchpad
+    write:
+    - scratchpad
+  delegates_to:
+  - retrieval
+  - executor
+  - reviewer
+- id: retrieval
+  role: Gathers information.
+  tools:
+  - web_search
+  - read_inbox
+  - kb_search
+  - crm_lookup
+  memory:
+    read:
+    - shared_notes
+    write:
+    - shared_notes
+    - scratchpad
+- id: executor
+  role: Performs state-changing actions.
+  tools:
+  - send_email
+  - update_ticket
+  memory:
+    read:
+    - scratchpad
+- id: reviewer
+  role: Reviews drafts for tone and completeness.
+  memory:
+    read:
+    - scratchpad
+  tools:
+  - send_email
+tasks:
+- id: summarize_inbox
+  description: Summarize new e-mails for the support team.
+  requires:
+  - edge: ret:read_inbox->retrieval
+    under:
+    - U
+    - S
+  - edge: msg:retrieval->supervisor
+    under:
+    - U
+    - S
+- id: web_research
+  description: Research a question on the web and report to the supervisor.
+  requires:
+  - edge: call:retrieval->web_search
+  - edge: ret:web_search->retrieval
+    under:
+    - U
+  - edge: msg:retrieval->supervisor
+    under:
+    - U
+- id: reply_to_customer
+  description: Look up the customer and send a personalised reply.
+  requires:
+  - edge: ret:crm_lookup->retrieval
+    under:
+    - S
+  - edge: msg:retrieval->supervisor
+    under:
+    - S
+  - edge: msg:supervisor->executor
+    under:
+    - S
+  - edge: call:executor->send_email
+    under:
+    - S
+- id: close_ticket
+  description: Close a ticket after the reply is sent.
+  requires:
+  - edge: msg:supervisor->executor
+  - edge: call:executor->update_ticket
+- id: remember_kb_facts
+  description: Keep useful knowledge-base facts in long-term notes.
+  requires:
+  - edge: ret:kb_search->retrieval
+  - edge: mw:retrieval->shared_notes
+  - edge: persist:shared_notes
+  - edge: mr:shared_notes->supervisor
+controls:
+  sessions: 2

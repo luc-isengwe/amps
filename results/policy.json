@@ -1,0 +1,30 @@
+{
+  "system": "demo-4agents",
+  "manifest_sha256": "c63ebb6172375eedcaf281e5d2de2b04405c92be8b25de472c6ee6fef79df34b",
+  "gates": {
+    "call:retrieval->web_search": "C",
+    "mr:scratchpad->executor": "I",
+    "msg:supervisor->executor": "I"
+  },
+  "registry": {
+    "crm_lookup": "ec3f94ad5f9d402baf742d6254a1f3fe932c6e42f6bdd0c00d4f33e595936c73",
+    "kb_search": "125804ee27a90c7af4e43d669308e4dd61486f83d1eb07ba1f8f86a07b85617e",
+    "read_inbox": "e86dbfbddbd6f828f0847cd32607509f29c013371da90a102d1525fdcdec1554",
+    "send_email": "a01817bce88522981a7480e240a2a34de770dd47ab18d2105dc2f7a7fd8d51f0",
+    "update_ticket": "4bcd98bd2bb1eeae5cbb16a9848b3fe6bf88a1bd402ce41a58a44f34e6f3ce28",
+    "web_search": "8201372d80107e592f8f8b79120f1f31c8ed69794537201e6c4cc5542281d581"
+  },
+  "meta": {
+    "method": "ilp",
+    "status": "secure",
+    "cost": 2.7,
+    "properties": [
+      "integrity",
+      "confidentiality"
+    ],
+    "sessions": 2,
+    "iterations": 4,
+    "constraints": 10,
+    "conflicts": []
+  }
+}

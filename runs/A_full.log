@@ -1,0 +1,173 @@
+/home/lintos/miniconda3/envs/amps/lib/python3.11/site-packages/agentdojo/scripts/benchmark.py:42: UserWarning: No .env file found
+  warnings.warn("No .env file found")
+Running benchmark for suite: 'banking'
+Using model: 'local'
+Using attack: 'important_instructions'
+12:21:12 INFO     Using local model: qwen3:4b-instruct-2507-q4_K_M                                                                                                                                 
+         INFO     Using tool delimiter: tool                                                                                                                                                       
+         INFO     Skipping task 'injection_task_0' with no injections because it was already run.                                                                                                  
+         INFO     Skipping task 'injection_task_1' with no injections because it was already run.                                                                                                  
+         INFO     Skipping task 'injection_task_2' with no injections because it was already run.                                                                                                  
+         INFO     Skipping task 'injection_task_3' with no injections because it was already run.                                                                                                  
+         INFO     Skipping task 'injection_task_4' with no injections because it was already run.                                                                                                  
+         INFO     Skipping task 'injection_task_5' with no injections because it was already run.                                                                                                  
+         INFO     Skipping task 'injection_task_6' with no injections because it was already run.                                                                                                  
+         INFO     Skipping task 'injection_task_7' with no injections because it was already run.                                                                                                  
+         INFO     Skipping task 'injection_task_8' with no injections because it was already run.                                                                                                  
+/home/lintos/miniconda3/envs/amps/lib/python3.11/site-packages/agentdojo/benchmark.py:209: UserWarning: Not all injection tasks were solved as user tasks.
+  warnings.warn("Not all injection tasks were solved as user tasks.")
+         INFO     Skipping task 'user_task_0' with 'injection_task_0' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_0' with 'injection_task_1' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_0' with 'injection_task_2' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_0' with 'injection_task_3' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_0' with 'injection_task_4' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_0' with 'injection_task_5' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_0' with 'injection_task_6' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_0' with 'injection_task_7' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_0' with 'injection_task_8' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_1' with 'injection_task_0' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_1' with 'injection_task_1' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_1' with 'injection_task_2' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_1' with 'injection_task_3' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_1' with 'injection_task_4' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_1' with 'injection_task_5' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_1' with 'injection_task_6' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_1' with 'injection_task_7' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_1' with 'injection_task_8' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_2' with 'injection_task_0' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_2' with 'injection_task_1' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_2' with 'injection_task_2' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_2' with 'injection_task_3' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_2' with 'injection_task_4' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_2' with 'injection_task_5' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_2' with 'injection_task_6' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_2' with 'injection_task_7' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_2' with 'injection_task_8' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_3' with 'injection_task_0' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_3' with 'injection_task_1' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_3' with 'injection_task_2' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_3' with 'injection_task_3' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_3' with 'injection_task_4' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_3' with 'injection_task_5' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_3' with 'injection_task_6' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_3' with 'injection_task_7' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_3' with 'injection_task_8' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_4' with 'injection_task_0' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_4' with 'injection_task_1' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_4' with 'injection_task_2' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_4' with 'injection_task_3' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_4' with 'injection_task_4' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_4' with 'injection_task_5' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_4' with 'injection_task_6' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_4' with 'injection_task_7' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_4' with 'injection_task_8' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_5' with 'injection_task_0' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_5' with 'injection_task_1' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_5' with 'injection_task_2' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_5' with 'injection_task_3' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_5' with 'injection_task_4' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_5' with 'injection_task_5' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_5' with 'injection_task_6' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_5' with 'injection_task_7' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_5' with 'injection_task_8' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_6' with 'injection_task_0' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_6' with 'injection_task_1' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_6' with 'injection_task_2' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_6' with 'injection_task_3' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_6' with 'injection_task_4' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_6' with 'injection_task_5' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_6' with 'injection_task_6' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_6' with 'injection_task_7' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_6' with 'injection_task_8' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_7' with 'injection_task_0' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_7' with 'injection_task_1' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_7' with 'injection_task_2' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_7' with 'injection_task_3' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_7' with 'injection_task_4' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_7' with 'injection_task_5' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_7' with 'injection_task_6' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_7' with 'injection_task_7' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_7' with 'injection_task_8' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_8' with 'injection_task_0' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_8' with 'injection_task_1' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_8' with 'injection_task_2' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_8' with 'injection_task_3' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_8' with 'injection_task_4' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_8' with 'injection_task_5' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_8' with 'injection_task_6' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_8' with 'injection_task_7' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_8' with 'injection_task_8' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_9' with 'injection_task_0' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_9' with 'injection_task_1' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_9' with 'injection_task_2' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_9' with 'injection_task_3' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_9' with 'injection_task_4' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_9' with 'injection_task_5' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_9' with 'injection_task_6' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_9' with 'injection_task_7' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_9' with 'injection_task_8' because it was already run.                                                                                                  
+         INFO     Skipping task 'user_task_10' with 'injection_task_0' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_10' with 'injection_task_1' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_10' with 'injection_task_2' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_10' with 'injection_task_3' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_10' with 'injection_task_4' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_10' with 'injection_task_5' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_10' with 'injection_task_6' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_10' with 'injection_task_7' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_10' with 'injection_task_8' because it was already run.                                                                                                 
+12:21:13 INFO     Skipping task 'user_task_11' with 'injection_task_0' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_11' with 'injection_task_1' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_11' with 'injection_task_2' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_11' with 'injection_task_3' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_11' with 'injection_task_4' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_11' with 'injection_task_5' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_11' with 'injection_task_6' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_11' with 'injection_task_7' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_11' with 'injection_task_8' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_12' with 'injection_task_0' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_12' with 'injection_task_1' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_12' with 'injection_task_2' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_12' with 'injection_task_3' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_12' with 'injection_task_4' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_12' with 'injection_task_5' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_12' with 'injection_task_6' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_12' with 'injection_task_7' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_12' with 'injection_task_8' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_13' with 'injection_task_0' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_13' with 'injection_task_1' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_13' with 'injection_task_2' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_13' with 'injection_task_3' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_13' with 'injection_task_4' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_13' with 'injection_task_5' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_13' with 'injection_task_6' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_13' with 'injection_task_7' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_13' with 'injection_task_8' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_14' with 'injection_task_0' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_14' with 'injection_task_1' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_14' with 'injection_task_2' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_14' with 'injection_task_3' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_14' with 'injection_task_4' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_14' with 'injection_task_5' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_14' with 'injection_task_6' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_14' with 'injection_task_7' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_14' with 'injection_task_8' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_15' with 'injection_task_0' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_15' with 'injection_task_1' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_15' with 'injection_task_2' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_15' with 'injection_task_3' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_15' with 'injection_task_4' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_15' with 'injection_task_5' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_15' with 'injection_task_6' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_15' with 'injection_task_7' because it was already run.                                                                                                 
+         INFO     Skipping task 'user_task_15' with 'injection_task_8' because it was already run.                                                                                                 
+Finished benchmark for suite: 'banking'
+Results for suite banking
+Average utility: 53.47%
+
+Passed injection tasks as user tasks: 3/9
+Average security: 19.44%
+Results for suite combined
+Average utility: 53.47%
+
+Passed injection tasks as user tasks: 3/9
+Average security: 19.44%

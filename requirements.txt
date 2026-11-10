@@ -1,0 +1,27 @@
+# Dependencies of amps and of the experiments of the thesis.
+#
+# Install (Python 3.11 or later):
+#     pip install -r requirements.txt
+#     pip install -e .
+#
+# Checked on 2026-10-31 with a clean Python 3.11 environment: installation
+# without conflict, 93/93 tests passed, and all the scripted experiments ran.
+# The exact versions of the environment used for the thesis are listed in
+# requirements-lock.txt.
+
+# --- Framework (amps/) -------------------------------------------------------
+pydantic>=2.7.1        # manifest schema; unknown keys are rejected
+PyYAML>=6.0.1          # manifests are YAML files
+networkx>=3.2          # attack-path graph, minimum cut
+pulp==2.9.0            # integer linear programme; 2.9.0 is the last version that
+                       # bundles the CBC solver (later versions need CBC installed apart)
+
+# --- Four-agent demonstrator (amps_demo/) --------------------------------------
+langgraph>=0.2
+
+# --- AgentDojo experiments (experiments/) --------------------------------------
+agentdojo==0.1.35      # version used in the thesis (banking suite, benchmark v1.2.2)
+matplotlib>=3.7        # figures (experiments/make_figures.py)
+
+# --- Tests ---------------------------------------------------------------------
+pytest>=8
