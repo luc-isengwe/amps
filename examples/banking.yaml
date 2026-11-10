@@ -7,7 +7,7 @@
 #
 # This file was written BEFORE running any defended configuration (B, B_strict)
 # on AgentDojo. Only configuration A (no defense) had been measured. Each label
-# is justified in a comment; the justifications are reproduced in the thesis.
+# is justified in a comment.
 #
 # Label conventions (amps):
 #   output.trust = untrusted  -> label U : a third party can write (part of) the output
@@ -65,7 +65,7 @@ tools:
   - id: get_scheduled_transactions
     description: Get the list of scheduled transactions.
     output: {trust: trusted, data_classes: [transaction_history]}
-    # Created by the account holder: trusted (assumption stated in the thesis:
+    # Created by the account holder: trusted (assumption:
     # a scheduled transaction created earlier under attacker influence is out of
     # scope of this single-session model). Confidential: private payments.
 

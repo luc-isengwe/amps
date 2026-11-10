@@ -5,7 +5,7 @@
 ``B_sink``    a common developer heuristic: put an integrity gate directly
               in front of every state-changing tool, and nothing else.
               It operationalises the "hand-written policy" baseline
-              (``B_man`` in Chapter 3) in a reproducible way.
+              (``B_man``) in a reproducible way.
 ``B_util``    the policy synthesized by amps with the *workflow-weighted*
               objective: among secure policies, first break as few
               legitimate workflows as possible, then minimise gate cost.

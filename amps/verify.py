@@ -17,7 +17,7 @@ For every node we compute the set of labels that can reach it.
   single conversation, so if ``{U}`` can reach it and ``{S}`` can reach it,
   then ``{U,S}`` can be present at the same time. We therefore close the
   label set of every ``ctx`` node under union. This is the "session-level
-  conservative label" of the thesis (FIDES-like).
+  conservative label" (FIDES-like).
 * **Memory entries do not accumulate.** Each memory entry keeps the label of
   the context that wrote it (origin bound at write time). Two entries with
   labels ``{U}`` and ``{S}`` stay separate inside the store; they are only

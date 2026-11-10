@@ -1,7 +1,7 @@
 """Declarative security manifest: schema, validation and edge templates.
 
 The manifest is the single input that a developer writes to describe a
-multi-agent system. It has six sections (More clear whitin Chapter 4 of the thesis):
+multi-agent system. It has six sections:
 
 ``data_classes``  kinds of data and how sensitive they are
 ``tools``         what each tool returns and where its input goes
@@ -276,7 +276,7 @@ def _default_costs() -> dict[str, float]:
     # Default utility cost of gating one edge, per edge kind. Tool calls and
     # tool returns are more expensive to gate than memory accesses because
     # they remove more visible functionality. These are defaults only; the
-    # thesis evaluation varies them (sensitivity analysis).
+    # evaluation varies them (sensitivity analysis).
     return {"ret": 2.0, "call": 3.0, "mw": 1.0, "mr": 1.0, "msg": 2.0, "persist": 1.0,
             "prompt": 4.0}
 

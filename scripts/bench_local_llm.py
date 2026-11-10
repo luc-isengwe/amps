@@ -3,7 +3,7 @@
 Why this script exists
 ----------------------
 The number of LLM-driven runs we can afford in the evaluation depends on
-how fast a 4-bit model runs on the thesis machine (Ryzen 7 PRO 2700U,
+how fast a 4-bit model runs on the test machine (Ryzen 7 PRO 2700U,
 12 GB RAM, no GPU). We must *measure* it before planning the test.
 
 Changes from version 1 (and why)

@@ -1,4 +1,4 @@
-"""Figures of Chapter 4, drawn from the AgentDojo result files in runs/.
+"""Figures drawn from the AgentDojo result files in runs/.
 
 Every number is read from the JSON files written by AgentDojo; nothing is
 typed by hand. Run from the project folder (~/Documents/amps):
@@ -32,7 +32,7 @@ from matplotlib.patches import Patch
 RUNS = Path("runs")              # where AgentDojo wrote its results
 OUT = Path("figures")            # where the figures are saved
 
-# Configurations: label on the figure -> run folder (same order as the thesis).
+# Configurations: label on the figure -> run folder.
 CONFIGS = {
     "A\n(no defence)": "qwen3-4b-instruct_A",
     "Repeat\nprompt":  "qwen3-4b-instruct_repeat",
@@ -419,7 +419,7 @@ def fig6():
 FIGURES = {1: fig1, 2: fig2, 3: fig3, 4: fig4, 5: fig5, 6: fig6}
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Draw the figures of Chapter 4.")
+    parser = argparse.ArgumentParser(description="Draw the figures of the AgentDojo evaluation.")
     parser.add_argument("--fig", type=int, choices=sorted(FIGURES),
                         help="number of the figure to draw (default: all)")
     choice = parser.parse_args().fig

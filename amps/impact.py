@@ -9,7 +9,7 @@ the analysis answers four questions:
 2. **Is the deployed policy still sufficient?** We carry the old gates over
    to the new graph and run the verifier. Every witness found is an attack
    path that the change opened and the old policy does not stop. This set
-   is the *delta* Delta W of the thesis.
+   is the *delta* Delta W.
 3. **What is the new minimal policy?** Re-synthesis with a warm start (the
    old gates and the new witnesses are given to the solver up front).
 4. **Which gates are now stale?** Gates on edges that no longer exist (for

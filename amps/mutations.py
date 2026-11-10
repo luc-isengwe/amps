@@ -1,10 +1,10 @@
-"""Configuration mutations used in the lifecycle study (about hypothesis H6).
+"""Configuration mutations used in the lifecycle study.
 
 Each function takes a manifest (as a Python dictionary, the same structure
 as the YAML file) and returns a new dictionary describing the system after
 a realistic change. The original is never modified (we work on a deep copy).
 
-The mutations mirror the lifecycle events discussed in Chapter 3:
+The mutations mirror common lifecycle events:
 
 ``rug_pull``           a tool silently changes its descriptor/behaviour
 ``permission_drift``   an agent receives a tool it did not have before

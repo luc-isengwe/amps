@@ -94,7 +94,7 @@ class CompiledGraph:
         return len(set(self.manifest.controls.session_principals)) > 1
 
     def stats(self) -> dict[str, int]:
-        """Size of the graph, reported in the thesis (scalability)."""
+        """Size of the graph (used by the scalability study)."""
         kinds: dict[str, int] = {}
         for _, data in self.graph.nodes(data=True):
             kinds[data["kind"]] = kinds.get(data["kind"], 0) + 1

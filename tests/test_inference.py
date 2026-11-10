@@ -64,7 +64,7 @@ def test_inferred_output_gives_field_level_labels():
 
 
 @pytest.mark.parametrize("name", ["banking.yaml", "banking_fields.yaml"])
-def test_thesis_manifests_have_no_unsafe_finding(name):
+def test_example_manifests_have_no_unsafe_finding(name):
     m = load_manifest(ROOT / "examples" / name)
     findings = compare(m, collect_evidence(OBS))
     assert unsafe(findings) == []

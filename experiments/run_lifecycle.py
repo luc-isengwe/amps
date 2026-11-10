@@ -1,4 +1,4 @@
-"""Lifecycle study (RQ3, hypothesis H6): what happens when a deployed agent
+"""Lifecycle study: what happens when a deployed agent
 system changes?
 
 For each manifest, every applicable configuration change is generated

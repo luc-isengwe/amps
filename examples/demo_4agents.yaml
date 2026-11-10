@@ -1,4 +1,4 @@
-# Security manifest of the four-agent demonstrator (Chapter 4).
+# Security manifest of the four-agent demonstrator.
 #
 # Supervisor/planner  -> plans, delegates, aggregates
 # Retrieval           -> web search, knowledge base, CRM, inbox
@@ -9,7 +9,7 @@
 
 version: 1
 system: demo-4agents
-description: Customer-support assistant used as the main demonstrator of the thesis.
+description: Customer-support assistant used as the main demonstrator.
 
 data_classes:
   - id: public_web

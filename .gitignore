@@ -14,5 +14,5 @@ tests/generated/
 .idea/
 .DS_Store
 
-# results/, runs/ and figures/ are NOT ignored: the thesis states that the
-# result files are published with the code.
+# results/, runs/ and figures/ are NOT ignored: the result files are
+# published with the code.

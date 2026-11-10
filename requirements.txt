@@ -1,4 +1,4 @@
-# Dependencies of amps and of the experiments of the thesis.
+# Dependencies of amps and of the experiments.
 #
 # Install (Python 3.11 or later):
 #     pip install -r requirements.txt
@@ -6,7 +6,7 @@
 #
 # Checked on 2026-10-31 with a clean Python 3.11 environment: installation
 # without conflict, 93/93 tests passed, and all the scripted experiments ran.
-# The exact versions of the environment used for the thesis are listed in
+# The exact versions of the environment used for the experiments are listed in
 # requirements-lock.txt.
 
 # --- Framework (amps/) -------------------------------------------------------
@@ -20,7 +20,7 @@ pulp==2.9.0            # integer linear programme; 2.9.0 is the last version tha
 langgraph>=0.2
 
 # --- AgentDojo experiments (experiments/) --------------------------------------
-agentdojo==0.1.35      # version used in the thesis (banking suite, benchmark v1.2.2)
+agentdojo==0.1.35      # version used in the experiments (banking suite, benchmark v1.2.2)
 matplotlib>=3.7        # figures (experiments/make_figures.py)
 
 # --- Tests ---------------------------------------------------------------------

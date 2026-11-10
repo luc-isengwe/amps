@@ -14,7 +14,7 @@ Two families are produced:
            can cost utility: content read for the first task stays in the
            agents' context during the second one. Measuring how often these
            workflows are blocked quantifies the utility cost of the policy
-           (hypotheses H3 and H5 of the thesis).
+           (two of the evaluation hypotheses).
 
 A workflow *succeeds* when every action is allowed and no memory entry is
 hidden from the reader.
@@ -271,7 +271,7 @@ def confirmation_lower_bound(manifest: Manifest) -> dict[str, int]:
     """Minimum number of human confirmations each task needs, under ANY
     secure policy that lets the task complete.
 
-    Proposition (proved in the thesis, checked by the tests): let p be a
+    Proposition (checked by the tests): let p be a
     (call edge, label) pair of a task's usage profile that violates a sink
     property. Every edge on the derivation that leads to p carries an
     untrusted label, so a gate in mode R, I or C placed on any of them

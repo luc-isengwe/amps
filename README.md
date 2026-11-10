@@ -1,7 +1,6 @@
 # amps — Agent Manifest → Policy Synthesis
 
-Research prototype of the master's thesis **"Security of Agentic AI Systems"**
-(African Institute for Mathematical Sciences, AIMS Senegal, 2026).
+Research prototype for the security of agentic AI systems.
 
 An agent built on a language model reads web pages, e-mails and documents, calls tools,
 keeps memories and delegates work to other agents. An attacker who can write in any of
@@ -37,9 +36,8 @@ is described in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 [Scope of the guarantee](#what-the-guarantee-covers-and-what-it-does-not) ·
 [Installation](#installation) ·
 [Quick start](#quick-start-no-language-model-needed) ·
-[Reproducing the thesis](#reproducing-the-results-of-the-thesis) ·
-[Repository layout](#repository-layout) ·
-[Citation](#citation)
+[Reproducing the experiments](#reproducing-the-experiments) ·
+[Repository layout](#repository-layout)
 
 ---
 
@@ -127,10 +125,10 @@ pytest -q                           # 93 tests, a few seconds
 `pulp`), the demonstrator (`langgraph`), the experiments (`agentdojo`, `matplotlib`) and
 `pytest`. PuLP is pinned to **2.9.0**, the last version that bundles the CBC solver: with
 a later version the synthesis fails unless CBC is installed separately. AgentDojo is
-pinned to **0.1.35**, the version used in the thesis.
+pinned to **0.1.35**, the version used in the experiments.
 
 `requirements-lock.txt` lists the exact version of every package of the environment in
-which the experiments of the thesis were run.
+which the experiments were run.
 
 ## Quick start (no language model needed)
 
@@ -160,13 +158,13 @@ and `impact`. `amps <command> --help` lists the options of each.
 
 ---
 
-## Reproducing the results of the thesis
+## Reproducing the experiments
 
 Run every command from the repository folder, with the `amps` environment active.
 
 ### 1. Static and scripted experiments (no language model, a few seconds each)
 
-| Command | Result in the thesis | Output in `results/` |
+| Command | Result | Output in `results/` |
 |---|---|---|
 | `python experiments/run_utility_t1.py` | four-agent demonstrator, 30 workflows (A, B, B_util, B_sink, B_strict) | `utility_t1_summary.json`, `utility_t1_workflows.csv` |
 | `python experiments/run_lifecycle.py` | impact analysis of the 74 configuration changes | `lifecycle_mutations.csv`, `lifecycle_summary.json` |
@@ -288,7 +286,7 @@ The specification of the observations is in `docs/CANARY_OBSERVATIONS_FR.md`.
 python experiments/compare_runs.py                                  # important_instructions: ASR, utility, Wilson intervals, McNemar tests
 python experiments/compare_runs.py local-amps_BH tool_knowledge     # second attack
 python experiments/compare_runs.py local-amps_BH ignore_previous    # third attack
-python experiments/make_figures.py                                  # figures 1 to 6 of the thesis, in figures/ (PDF and PNG)
+python experiments/make_figures.py                                  # figures 1 to 6, in figures/ (PDF and PNG)
 ```
 
 ---
@@ -301,13 +299,13 @@ amps_demo/       four-agent customer-support demonstrator (LangGraph, simulated 
 examples/        manifests: four-agent demonstrator; AgentDojo banking at session and
                  field level, with and without human confirmation; multi-tenant
                  support assistant
-experiments/     the scripts of every experiment of the thesis, analysis and figures
+experiments/     the scripts of every experiment, analysis and figures
 scripts/         throughput benchmark of local models served by Ollama
 tests/           93 automated tests
 results/         result files (CSV, JSON), synthesized policies, confirmation logs
 runs/            raw AgentDojo results, one JSON file per case
-figures/         figures of the thesis (PDF and PNG)
-docs/            architecture, user guide (French), canary observation specification
+figures/         figures (PDF and PNG)
+docs/            architecture, canary observation specification
 ```
 
 ## Tests
@@ -319,15 +317,6 @@ with the synthesized policy, that the synthesized policies reach the lower bound
 human confirmations, that generated regression tests pass with the new policy and fail
 with the old one, and that labelling errors are detected by the canary check.
 
-## Citation
-
-If you use this code, please cite the thesis:
-
-```
-Luc ISENGWE NTOZI. Security of Agentic AI Systems.
-Master's thesis, African Institute for Mathematical Sciences (AIMS) Senegal, 2026.
-```
-
 ## Acknowledgements
 
 The empirical evaluation uses [AgentDojo](https://github.com/ethz-spylab/agentdojo)
@@ -336,5 +325,4 @@ provided by AgentDojo; this repository contains no new attack.
 
 ## License
 
-<!-- TODO: choose a license (for example MIT) and add the LICENSE file. -->
-To be defined.
+This project is released under the MIT License. See the [LICENSE](LICENSE) file.

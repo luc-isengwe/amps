@@ -2,7 +2,7 @@
 
 This document describes how the code of `amps` is organized: the three phases of the
 framework, the modules of the package and their dependencies, how an action is mediated
-at run time, and how the experiments of the thesis produce their results and figures.
+at run time, and how the experiments produce their results and figures.
 
 The diagrams are written in Mermaid, which GitHub displays directly. PNG versions are in
 this folder (`architecture_overview.png`, `architecture_modules.png`,
@@ -39,7 +39,7 @@ flowchart LR
         EN --> TR["Decision trace"]
     end
 
-    subgraph LC["Lifecycle (RQ3)"]
+    subgraph LC["Lifecycle"]
         direction TB
         MU["mutations.py<br/>configuration change"] --> IM["impact.py<br/>new paths, re-synthesis"]
         IM --> TG["testgen.py<br/>regression tests"]
@@ -249,7 +249,7 @@ flowchart LR
     end
 ```
 
-| Figure of the thesis | File | Data |
+| Figure | File | Data |
 |---|---|---|
 | Security and utility of the six configurations | `fig1_security_utility` | `runs/` |
 | Three attacks on the file-based tasks | `fig2_attacks` | `runs/` |

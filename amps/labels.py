@@ -6,7 +6,7 @@ framework is built on.
 1. Labels
    A *label* is the set of security-relevant origins carried by a piece of
    information. We only track two origins, because the threat model of the
-   thesis in the Chapter 3 only needs two:
+   framework only needs two:
 
    * ``"U"`` (Untrusted): the information was produced or influenced by a
      source that an attacker may control (a web page, an incoming e-mail,
